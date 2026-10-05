@@ -1,0 +1,860 @@
+
+> landing-medica@1.0.0 test
+> playwright test --workers=2 --reporter=list,json
+
+(node:76692) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:27] "GET / HTTP/1.1" 200 -
+
+Running 18 tests using 2 workers
+
+(node:76725) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:76726) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  ✓   2 tests/build.spec.cjs:7:1 › build gera HTML portátil e SEO estático sem publicar identidade incompleta (133ms)
+  ✓   3 tests/build.spec.cjs:20:1 › build em modo publicado recusa campos obrigatórios ausentes (109ms)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:31] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:32] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:32] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   1 tests/config.spec.cjs:3:1 › configuração única personaliza identidade e só exibe especialidade registrada (2.2s)
+  ✓   5 tests/delivery.spec.cjs:6:1 › HTML entregue abre diretamente e mantém interações sem servidor (900ms)
+  ✓   4 tests/contacts.spec.cjs:3:1 › contatos ausentes informam pendência e política abre sem transmitir dados (3.0s)
+  ✓   6 tests/delivery.spec.cjs:18:1 › build publicado inclui SEO verificável no HTML sem JavaScript (210ms)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:34] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   8 tests/delivery.spec.cjs:44:1 › botão flutuante não esconde conteúdo da faixa de tratamentos (621ms)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   7 tests/form.spec.cjs:11:1 › formulário valida dados e consentimento e não simula envio sem configuração (1.4s)
+  ✓   9 tests/landing.spec.cjs:3:1 › página apresenta conteúdo educativo completo sem identidade médica inventada (937ms)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:35] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:36] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  11 tests/map.spec.cjs:3:1 › mapa sem endereço informa pendência; configurado só incorpora após consentimento (1.9s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:37] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:37] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:37] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:37] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:38] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  12 tests/navigation.spec.cjs:3:1 › navegação móvel funciona por teclado, fecha com Escape e destaca seção ativa (903ms)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:38] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:38] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:38] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:38] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:39] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  10 tests/form.spec.cjs:27:1 › formulário configurado prepara link sem enviar e invalida ao editar ou revogar consentimento (4.8s)
+  ✓  13 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 320px e auditoria automática de acessibilidade (2.2s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:41] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:41] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:41] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:41] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:41] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  14 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 390px e auditoria automática de acessibilidade (2.5s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:43] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:43] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:43] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:43] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:43] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  15 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 768px e auditoria automática de acessibilidade (2.0s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:45] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:45] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:45] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:45] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:45] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  16 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 1024px e auditoria automática de acessibilidade (2.3s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:47] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:47] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:47] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:48] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:48] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  17 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 1440px e auditoria automática de acessibilidade (3.1s)
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:51] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:51] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [05/Oct/2026 17:07:51] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  18 tests/quality.spec.cjs:25:1 › sem JavaScript, o formulário não transmite dados via URL (389ms)
+
+  18 passed (25.3s)
+{
+  "config": {
+    "configFile": "/home/weaven/trabalho/landing-medica/playwright.config.cjs",
+    "rootDir": "/home/weaven/trabalho/landing-medica/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/weaven/trabalho/landing-medica/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/home/weaven/trabalho/landing-medica/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 2,
+    "webServer": {
+      "command": "python3 -m http.server 4173 --bind 127.0.0.1",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "build.spec.cjs",
+      "file": "build.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "build gera HTML portátil e SEO estático sem publicar identidade incompleta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:29.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bc030ceb4c9ce06df0f-f5c8579c3147e83cc2fb",
+          "file": "build.spec.cjs",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "build em modo publicado recusa campos obrigatórios ausentes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 109,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:30.176Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bc030ceb4c9ce06df0f-10787d6cc2890d3f2614",
+          "file": "build.spec.cjs",
+          "line": 20,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "config.spec.cjs",
+      "file": "config.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "configuração única personaliza identidade e só exibe especialidade registrada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2151,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:29.967Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa72d546f03c8bdbbe4a-5fdb6a16aa9c99e810b6",
+          "file": "config.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "contacts.spec.cjs",
+      "file": "contacts.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "contatos ausentes informam pendência e política abre sem transmitir dados",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:30.351Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eddfd190575a375d3183-cd2e0a1b72edfdb614bc",
+          "file": "contacts.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "delivery.spec.cjs",
+      "file": "delivery.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "HTML entregue abre diretamente e mantém interações sem servidor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:32.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-8616b6fad38031129843",
+          "file": "delivery.spec.cjs",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "build publicado inclui SEO verificável no HTML sem JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 210,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:33.781Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-cd44a5a0a882ed1bdbe7",
+          "file": "delivery.spec.cjs",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "botão flutuante não esconde conteúdo da faixa de tratamentos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:34.036Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-0d0b202d5402696207d4",
+          "file": "delivery.spec.cjs",
+          "line": 44,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "form.spec.cjs",
+      "file": "form.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "formulário valida dados e consentimento e não simula envio sem configuração",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1425,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:33.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d13c270adb37dea5b5d-e87b69d8ea5f9194a1f3",
+          "file": "form.spec.cjs",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "formulário configurado prepara link sem enviar e invalida ao editar ou revogar consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:35.438Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d13c270adb37dea5b5d-67f4fae6f007a953ccaa",
+          "file": "form.spec.cjs",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "landing.spec.cjs",
+      "file": "landing.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "página apresenta conteúdo educativo completo sem identidade médica inventada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 937,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:34.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f71361789364c0e29d5-582119fa2c5247dd92df",
+          "file": "landing.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "map.spec.cjs",
+      "file": "map.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mapa sem endereço informa pendência; configurado só incorpora após consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1858,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:35.739Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "514a4ac945cf639287c9-950a344d4388b96362e5",
+          "file": "map.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "navigation.spec.cjs",
+      "file": "navigation.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "navegação móvel funciona por teclado, fecha com Escape e destaca seção ativa",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 903,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:37.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "542a9eca2813a94b3627-d1e57a48df3be9127492",
+          "file": "navigation.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "quality.spec.cjs",
+      "file": "quality.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "layout sem rolagem horizontal em 320px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2249,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:38.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-4075afa9e1dd6afab00e",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 390px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2453,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:40.893Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-63bf332e648b2986e89f",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 768px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1999,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:43.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-37765a73af4934903c99",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 1024px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2303,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:45.444Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-17d1d69421e0280f8ca8",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 1440px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3089,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:47.779Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-8d4c21e346bc3d202715",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "sem JavaScript, o formulário não transmite dados via URL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T20:07:50.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-2c843730147eac0890de",
+          "file": "quality.spec.cjs",
+          "line": 25,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-05T20:07:26.603Z",
+    "duration": 25339.512,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
