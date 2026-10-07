@@ -1,0 +1,76 @@
+{
+  "folder": "https://drive.google.com/drive/folders/1Ctu7P5fhIgR2I-rBF1zV_pOZrGZnmGwA",
+  "originals": [
+    {
+      "name": "referencia-logo.png",
+      "driveId": "1ZyRAZMpKSlNnUk1k1qQUK0rwGOS3QNV1",
+      "sha256": "e634f927066398f37430514b16e1f94e85757644deae5e708e1d884800cac3cc",
+      "bytes": 163696
+    },
+    {
+      "name": "logo-gold.png",
+      "driveId": "1Bu-I1zRfATtC_YW2AfFIL3mk-6gfXnM8",
+      "sha256": "91c057ee830b57ce9d05a40bba863c2d162a1f3d32abd44080093a833fd612a1",
+      "bytes": 29912
+    },
+    {
+      "name": "logo-nude.png",
+      "driveId": "1dMum7xoA6zEAQVzrpz01WJNQHaA1Mxdc",
+      "sha256": "64aad92d819a347ed3a7c2ec86f797e0987c22e21051bbb8dc98888a7f53612f",
+      "bytes": 26336
+    },
+    {
+      "name": "logo-azul.pdf",
+      "driveId": "1V0_DsDCeB7Q_E1YOAcSeHzznE-qXZrKR",
+      "sha256": "08f289e9d828b3a7270e6498743bd19bf681d674ca64672fa20a4a9be812f6d9",
+      "bytes": 427371
+    },
+    {
+      "name": "logo-branco.pdf",
+      "driveId": "1tBFps1hBOh6aIBrZEwhqmuWqqSOmB24i",
+      "sha256": "c11eaffd4786cfc417ef8322a0660eee54e87c43f485c6784e5f9deab4cef02c",
+      "bytes": 427369
+    },
+    {
+      "name": "icone-gold.png",
+      "driveId": "1uxbdSjBjEKUS6gqll82MsgXeHPRZS6qW",
+      "sha256": "43e4587871f4f0bf9beb45753853151a63f4645d842a9e2a926324bed0d0657d",
+      "bytes": 17231
+    }
+  ],
+  "palette": {
+    "primary": "#171f2f",
+    "primary-hover": "#121825",
+    "secondary": "#d2c5b3",
+    "accent": "#e7cfa0",
+    "taupe": "#a59281",
+    "paper": "#faf9f7",
+    "surface": "#ffffff",
+    "surface-soft": "#f5f2ee",
+    "surface-warm": "#f7f5f4",
+    "ink": "#2e3544",
+    "muted": "#5d626d",
+    "accent-text": "#69625f",
+    "border": "#ded5c8",
+    "border-strong": "#8b7d72",
+    "border-on-primary": "#716f6e",
+    "on-primary": "#ffffff",
+    "on-primary-muted": "#e3dbd0",
+    "selection": "#f3e6ce",
+    "header-surface": "#faf9f7fa",
+    "error": "#a12e2b",
+    "error-surface": "#f4e9e3",
+    "shadow-subtle": "#171f2f09",
+    "shadow-medium": "#171f2f1a",
+    "shadow-float": "#171f2f26",
+    "backdrop": "#171f2f6e",
+    "grid-line": "#d2c5b345",
+    "print-ink": "#000000"
+  },
+  "notes": [
+    "Logo.png contém MÉTODO BNZ PERFIL e não foi usada como marca profissional.",
+    "Os PNG/PDF usados da marca profissional possuem fundo. Não foi removido artificialmente o fundo.",
+    "WebP usa compressão sem perdas. Na versão compacta, apenas margens externas uniformes foram reduzidas; nenhum elemento da logo foi recortado.",
+    "Nome, credenciais, especialidade, contatos e textos não foram preenchidos ou alterados com base em inferências da logo."
+  ]
+}
