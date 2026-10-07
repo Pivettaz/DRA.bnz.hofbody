@@ -31,8 +31,8 @@ const ready = config.published === true;
 let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const name = filled(config.name) ? config.name : '[NOME]';
 const city = filled(config.city) ? config.city : '[CIDADE]';
-const title = `Dra. ${name} | Escleroterapia e Microagulhamento em ${city}`;
-const description = `Conheça o atendimento da Dra. ${name} em ${city}. Informações sobre secagem de vasinhos, microagulhamento, localização e agendamento.`;
+const title = `${filled(config.name) ? `Dra. ${name} | ` : ''}Escleroterapia e Microagulhamento em ${city}`;
+const description = `Conheça o atendimento${filled(config.name) ? ` da Dra. ${name}` : ''} em ${city}. Informações sobre secagem de vasinhos, microagulhamento, localização e agendamento.`;
 html = html.replace(/<title>.*?<\/title>/, `<title>${escape(title)}</title>`)
   .replace(/(<meta name="description" content=")[^"]*(">)/, (_, a, b) => a + escape(description) + b)
   .replace(/(<meta property="og:title" content=")[^"]*(">)/, (_, a, b) => a + escape(title) + b)
@@ -61,11 +61,22 @@ if (ready) {
 }
 const css = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 const app = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
+// Incorporar apenas imagens locais declaradas para preservar a entrega portátil.
+const portableConfig = JSON.parse(JSON.stringify(config));
+for (const key of ['logo', 'logoDark', 'logoCompact', 'logoCompactDark', 'portrait', 'headerLogo', 'heroLogo']) {
+  const value = config[key];
+  if (!filled(value) || !value.startsWith('assets/')) continue;
+  const asset = path.resolve(root, value);
+  if (!asset.startsWith(path.join(root, 'assets') + path.sep)) throw new Error('Imagem fora da pasta assets.');
+  const mime = { '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.avif': 'image/avif' }[path.extname(asset).toLowerCase()];
+  if (mime && fs.existsSync(asset)) portableConfig[key] = `data:${mime};base64,${fs.readFileSync(asset).toString('base64')}`;
+}
+const portableConfigSource = `window.SITE_CONFIG=${JSON.stringify(portableConfig).replace(/</g, '\\u003c')};`;
 const safeJS = source => source.replace(/<\/script/gi, '<\\/script');
 html = html.replace('<link rel="stylesheet" href="styles.css">', () => `<style>\n${css}\n</style>`)
   .replace('<script src="config.js" defer></script>', '')
   .replace('<script src="app.js" defer></script>', '')
-  .replace('</body>', () => `<script>${safeJS(configSource)}</script><script>${safeJS(app)}</script></body>`);
+  .replace('</body>', () => `<script>${safeJS(portableConfigSource)}</script><script>${safeJS(app)}</script></body>`);
 const favicon = fs.readFileSync(path.join(root, 'assets/favicon.svg'));
 html = html.replace('href="assets/favicon.svg"', `href="data:image/svg+xml;base64,${favicon.toString('base64')}"`);
 fs.mkdirSync(out, { recursive: true });

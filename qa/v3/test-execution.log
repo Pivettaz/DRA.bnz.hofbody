@@ -1,0 +1,1386 @@
+
+> landing-medica@1.0.0 test
+> playwright test --workers=2 --reporter=list,json
+
+(node:69926) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:50] "GET / HTTP/1.1" 200 -
+
+Running 29 tests using 2 workers
+
+(node:69959) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:69958) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  ✓   1 tests/build.spec.cjs:7:1 › build gera HTML portátil e SEO estático sem publicar identidade incompleta (463ms)
+  ✓   3 tests/build.spec.cjs:20:1 › build em modo publicado recusa campos obrigatórios ausentes (111ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:57] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:58] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   4 tests/config.spec.cjs:3:1 › configuração única personaliza identidade e só exibe especialidade registrada (2.2s)
+  ✓   2 tests/brand-v3.spec.cjs:8:1 › cabeçalho apresenta apenas BNZ e Hero usa identidade completa enviada (2.4s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:58] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:21:59] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   6 tests/brand-v3.spec.cjs:29:1 › cores e funcionalidades permanecem inalteradas (1.6s)
+  ✓   5 tests/contacts.spec.cjs:3:1 › contatos ausentes informam pendência e política abre sem transmitir dados (1.8s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:00] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓   8 tests/delivery.spec.cjs:6:1 › HTML entregue abre diretamente e mantém interações sem servidor (1.8s)
+  ✓   7 tests/brand-v3.spec.cjs:45:3 › logos íntegras e prévia do topo em 390px (2.2s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:02] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  10 tests/brand-v3.spec.cjs:45:3 › logos íntegras e prévia do topo em 768px (893ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:03] "GET /app.js HTTP/1.1" 200 -
+  ✓   9 tests/delivery.spec.cjs:18:1 › build publicado inclui SEO verificável no HTML sem JavaScript (1.6s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  12 tests/delivery.spec.cjs:44:1 › botão flutuante não esconde conteúdo da faixa de tratamentos (656ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:04] "GET /app.js HTTP/1.1" 200 -
+  ✓  11 tests/brand-v3.spec.cjs:45:3 › logos íntegras e prévia do topo em 1440px (1.4s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:05] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+  ✓  14 tests/identity.spec.cjs:10:1 › logo profissional permanece e Hero não possui retrato (867ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:06] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  15 tests/identity.spec.cjs:25:1 › futura foto nunca reaparece na seção profissional (750ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:07] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  16 tests/identity.spec.cjs:36:1 › paleta é baseada na marca e todas as cores de componentes usam variáveis globais (705ms)
+  ✓  13 tests/form.spec.cjs:11:1 › formulário valida dados e consentimento e não simula envio sem configuração (3.6s)
+  ✓  17 tests/identity.spec.cjs:45:1 › textos, seções e links preservados fora do espaço de imagem substituído (877ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:08] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  19 tests/landing.spec.cjs:3:1 › página apresenta conteúdo educativo completo sem identidade médica inventada (690ms)
+  ✓  18 tests/form.spec.cjs:27:1 › formulário configurado prepara link sem enviar e invalida ao editar ou revogar consentimento (5.0s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:13] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  20 tests/logo-portable.spec.cjs:6:1 › versão portátil mantém logo oficial mesmo sem a pasta de assets (5.1s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET / HTTP/1.1" 200 -
+  ✓  22 tests/logo-portable.spec.cjs:19:1 › versão oficial clara é selecionada automaticamente sobre fundo escuro (359ms)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:14] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  21 tests/map.spec.cjs:3:1 › mapa sem endereço informa pendência; configurado só incorpora após consentimento (2.5s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:15] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /app.js HTTP/1.1" 200 -
+  ✓  23 tests/navigation.spec.cjs:3:1 › navegação móvel funciona por teclado, fecha com Escape e destaca seção ativa (1.4s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:16] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  24 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 320px e auditoria automática de acessibilidade (4.1s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:20] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:21] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+  ✓  25 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 390px e auditoria automática de acessibilidade (2.6s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:22] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:23] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:23] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:24] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+  ✓  26 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 768px e auditoria automática de acessibilidade (2.8s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:25] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  27 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 1024px e auditoria automática de acessibilidade (1.6s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /assets/identidade/logo-azul-compacta.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:27] "GET /assets/favicon.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:29] "GET /assets/identidade/logo-azul.webp HTTP/1.1" 200 -
+  ✓  28 tests/quality.spec.cjs:6:3 › layout sem rolagem horizontal em 1440px e auditoria automática de acessibilidade (3.4s)
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:30] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:30] "GET /styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:30] "GET /assets/identidade/bnz-cabecalho.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:30] "GET /assets/identidade/bnz-hof-body.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [07/Oct/2026 15:22:31] "GET /assets/favicon.svg HTTP/1.1" 200 -
+  ✓  29 tests/quality.spec.cjs:31:1 › sem JavaScript, o formulário não transmite dados via URL (394ms)
+
+  29 passed (41.8s)
+{
+  "config": {
+    "configFile": "/home/weaven/trabalho/landing-medica/playwright.config.cjs",
+    "rootDir": "/home/weaven/trabalho/landing-medica/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/weaven/trabalho/landing-medica/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/home/weaven/trabalho/landing-medica/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 2,
+    "webServer": {
+      "command": "python3 -m http.server 4173 --bind 127.0.0.1",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "brand-v3.spec.cjs",
+      "file": "brand-v3.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cabeçalho apresenta apenas BNZ e Hero usa identidade completa enviada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2382,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:53.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2f09d520beb3d2f1247-f9e04950daf653642801",
+          "file": "brand-v3.spec.cjs",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "cores e funcionalidades permanecem inalteradas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1637,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:58.702Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2f09d520beb3d2f1247-ccc6bcc43905d0053ef1",
+          "file": "brand-v3.spec.cjs",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "logos íntegras e prévia do topo em 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:00.376Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2f09d520beb3d2f1247-e08cfed79d3d82bc8cff",
+          "file": "brand-v3.spec.cjs",
+          "line": 45,
+          "column": 3
+        },
+        {
+          "title": "logos íntegras e prévia do topo em 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 893,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:02.616Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2f09d520beb3d2f1247-99a741d700da133c8db9",
+          "file": "brand-v3.spec.cjs",
+          "line": 45,
+          "column": 3
+        },
+        {
+          "title": "logos íntegras e prévia do topo em 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1357,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:03.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2f09d520beb3d2f1247-5800b23a533cb9bf85bc",
+          "file": "brand-v3.spec.cjs",
+          "line": 45,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "build.spec.cjs",
+      "file": "build.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "build gera HTML portátil e SEO estático sem publicar identidade incompleta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:53.798Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bc030ceb4c9ce06df0f-f5c8579c3147e83cc2fb",
+          "file": "build.spec.cjs",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "build em modo publicado recusa campos obrigatórios ausentes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:54.340Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bc030ceb4c9ce06df0f-10787d6cc2890d3f2614",
+          "file": "build.spec.cjs",
+          "line": 20,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "config.spec.cjs",
+      "file": "config.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "configuração única personaliza identidade e só exibe especialidade registrada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2175,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:54.521Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa72d546f03c8bdbbe4a-5fdb6a16aa9c99e810b6",
+          "file": "config.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "contacts.spec.cjs",
+      "file": "contacts.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "contatos ausentes informam pendência e política abre sem transmitir dados",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1765,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:21:58.601Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eddfd190575a375d3183-cd2e0a1b72edfdb614bc",
+          "file": "contacts.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "delivery.spec.cjs",
+      "file": "delivery.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "HTML entregue abre diretamente e mantém interações sem servidor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:00.432Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-8616b6fad38031129843",
+          "file": "delivery.spec.cjs",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "build publicado inclui SEO verificável no HTML sem JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:02.295Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-cd44a5a0a882ed1bdbe7",
+          "file": "delivery.spec.cjs",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "botão flutuante não esconde conteúdo da faixa de tratamentos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:03.935Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "71bf231b826822c012cc-0d0b202d5402696207d4",
+          "file": "delivery.spec.cjs",
+          "line": 44,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "form.spec.cjs",
+      "file": "form.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "formulário valida dados e consentimento e não simula envio sem configuração",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:04.662Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d13c270adb37dea5b5d-e87b69d8ea5f9194a1f3",
+          "file": "form.spec.cjs",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "formulário configurado prepara link sem enviar e invalida ao editar ou revogar consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4998,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:08.270Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d13c270adb37dea5b5d-67f4fae6f007a953ccaa",
+          "file": "form.spec.cjs",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "identity.spec.cjs",
+      "file": "identity.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "logo profissional permanece e Hero não possui retrato",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:05.081Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5bd74030116f0447e1f3-cad93476c2d0b2b3d2d1",
+          "file": "identity.spec.cjs",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "futura foto nunca reaparece na seção profissional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:05.980Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5bd74030116f0447e1f3-58bbc441a34f99378fa0",
+          "file": "identity.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "paleta é baseada na marca e todas as cores de componentes usam variáveis globais",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 705,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:06.769Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5bd74030116f0447e1f3-b6c67c7fd16ea5a559bc",
+          "file": "identity.spec.cjs",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "textos, seções e links preservados fora do espaço de imagem substituído",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 877,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:07.510Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5bd74030116f0447e1f3-7b0772f5e18b49fda958",
+          "file": "identity.spec.cjs",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "landing.spec.cjs",
+      "file": "landing.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "página apresenta conteúdo educativo completo sem identidade médica inventada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 690,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:08.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f71361789364c0e29d5-582119fa2c5247dd92df",
+          "file": "landing.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "logo-portable.spec.cjs",
+      "file": "logo-portable.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "versão portátil mantém logo oficial mesmo sem a pasta de assets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5147,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:09.193Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bc55c3ec061bdc2d0cb0-aa5ffe58f21bad00dce1",
+          "file": "logo-portable.spec.cjs",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "versão oficial clara é selecionada automaticamente sobre fundo escuro",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 359,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:14.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bc55c3ec061bdc2d0cb0-1c18f052971e11a63ebe",
+          "file": "logo-portable.spec.cjs",
+          "line": 19,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "map.spec.cjs",
+      "file": "map.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mapa sem endereço informa pendência; configurado só incorpora após consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:13.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "514a4ac945cf639287c9-950a344d4388b96362e5",
+          "file": "map.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "navigation.spec.cjs",
+      "file": "navigation.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "navegação móvel funciona por teclado, fecha com Escape e destaca seção ativa",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1419,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:14.775Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "542a9eca2813a94b3627-d1e57a48df3be9127492",
+          "file": "navigation.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "quality.spec.cjs",
+      "file": "quality.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "layout sem rolagem horizontal em 320px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:15.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-4075afa9e1dd6afab00e",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 390px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2638,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:20.074Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-63bf332e648b2986e89f",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 768px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:22.743Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-37765a73af4934903c99",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 1024px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:25.564Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-17d1d69421e0280f8ca8",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "layout sem rolagem horizontal em 1440px e auditoria automática de acessibilidade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3448,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:27.212Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-8d4c21e346bc3d202715",
+          "file": "quality.spec.cjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "sem JavaScript, o formulário não transmite dados via URL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 394,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T18:22:30.689Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8f9d18a9825ce7fa679c-2c843730147eac0890de",
+          "file": "quality.spec.cjs",
+          "line": 31,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-07T18:21:49.908Z",
+    "duration": 41818.482,
+    "expected": 29,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

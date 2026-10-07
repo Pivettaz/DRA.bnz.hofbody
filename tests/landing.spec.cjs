@@ -7,8 +7,8 @@ test('página apresenta conteúdo educativo completo sem identidade médica inve
   await expect(page.locator('h1')).toHaveText('Cuidado individualizado para a saúde vascular e a qualidade da sua pele');
   await expect(page.locator('main section[id]')).toHaveCount(8);
   await expect(page.locator('#duvidas details')).toHaveCount(7);
-  await expect(page.locator('body')).toContainText('[NOME COMPLETO]');
-  await expect(page.locator('body')).toContainText('[CRM E ESTADO]');
+  await expect(page.locator('body')).not.toContainText('[NOME COMPLETO]');
+  await expect(page.locator('body')).not.toContainText('[CRM E ESTADO]');
   await expect(page.locator('body')).toContainText('não substituem consulta, diagnóstico ou avaliação profissional');
   await expect(page.locator('body')).toContainText('Infecções ativas, acne inflamatória');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');

@@ -14,10 +14,16 @@ for (const width of [320, 390, 768, 1024, 1440]) {
     const results = await page.evaluate(async () => await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] } }));
     expect(results.violations.map(item => ({ id: item.id, nodes: item.nodes.map(n => n.target) }))).toEqual([]);
     expect(externalRequests).toEqual([]);
-    if ([390, 1440].includes(width)) {
+    if ([390, 768, 1440].includes(width)) {
       fs.mkdirSync('qa', { recursive: true });
-      await page.screenshot({ path: path.join('qa', `${width === 390 ? 'celular' : 'desktop'}.png`), fullPage: true });
-      await page.screenshot({ path: path.join('qa', `${width === 390 ? 'celular' : 'desktop'}-hero.png`) });
+      const label = width === 390 ? 'celular' : width === 768 ? 'tablet' : 'desktop';
+      await page.locator('#sobre').scrollIntoViewIfNeeded();
+      await expect(page.locator('#sobre .professional-logo')).toBeVisible();
+      await expect.poll(() => page.locator('#sobre .professional-logo').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+      await page.locator('#sobre').screenshot({ path: path.join('qa', `${label}-sobre.png`) });
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.screenshot({ path: path.join('qa', `${label}.png`), fullPage: true });
+      await page.screenshot({ path: path.join('qa', `${label}-hero.png`) });
     }
   });
 }
