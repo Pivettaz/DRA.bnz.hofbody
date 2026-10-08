@@ -553,3 +553,19 @@ footer{padding-bottom:0}
 .hero-brand-panel .hero-brand-tagline em{
   color:var(--hero-card-gold);
 }
+.button.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.button.whatsapp:hover {
+  background: #1ebe5b;
+}
+.btn-dark {
+  background: #172238;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 0;
+}
