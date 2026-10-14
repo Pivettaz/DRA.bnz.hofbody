@@ -21,7 +21,8 @@
     el.hidden = !specialtyConfirmed;
     if (specialtyConfirmed) el.textContent = `${config.specialty} · RQE ${config.rqe}`;
   });
-  $('#specialty-note').hidden = specialtyConfirmed || config.published === true;
+  const specialtyNote = $('#specialty-note');
+  if (specialtyNote) specialtyNote.hidden = specialtyConfirmed || config.published === true;
   if (Array.isArray(config.confirmedDifferentials) && config.confirmedDifferentials.some(filled)) {
     $('#differentials').replaceChildren(...config.confirmedDifferentials.filter(filled).map(value => {
       const li = document.createElement('li'); li.textContent = value; return li;
@@ -69,7 +70,8 @@
     image.addEventListener('error', () => image.replaceWith(el)); el.replaceWith(image);
   });
   if (filled(config.brand)) $$('.brand-name').forEach(el => { el.textContent = config.brand; });
-  $('#brand-note').hidden = filled(config.brand) || filled(config.logo);
+  const brandNote = $('#brand-note');
+  if (brandNote) brandNote.hidden = filled(config.brand) || filled(config.logo);
   $('#copyright-year').textContent = new Date().getFullYear();
   const title = `${filled(config.name) ? `Dra. ${config.name} | ` : ''}Escleroterapia e Microagulhamento em ${text(config.city, '[CIDADE]')}`;
   const description = `Conheça o atendimento${filled(config.name) ? ` da Dra. ${config.name}` : ''} em ${text(config.city, '[CIDADE]')}. Informações sobre secagem de vasinhos, microagulhamento, localização e agendamento.`;
@@ -103,10 +105,11 @@
     setActive(link.hash.slice(1)); setMenu(false);
     const destination = $(link.hash); destination.setAttribute('tabindex', '-1'); destination.focus({ preventScroll: true });
   }));
+  menu.querySelector('a.button').addEventListener('click', () => setMenu(false));
   const navSections = navLinks.map(link => $(link.hash));
   let scrollPending = false;
   const updateActive = () => {
-    const offset = $('.site-header').offsetHeight + 100;
+    const offset = $('.site-header').offsetHeight + 28;
     let current = navSections[0];
     navSections.forEach(section => { if (section.getBoundingClientRect().top <= offset) current = section; });
     setActive(current.id); scrollPending = false;
@@ -114,6 +117,7 @@
   // Use DOM order, since Sobre appears after Tratamentos in this editorial layout.
   navSections.sort((a, b) => a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
   window.addEventListener('scroll', () => { if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateActive); } }, { passive: true });
+  updateActive();
   window.matchMedia('(min-width: 1021px)').addEventListener('change', () => setMenu(false));
   $$('[data-service]').forEach(link => link.addEventListener('click', () => { $('#service').value = link.dataset.service; }));
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -169,7 +173,8 @@
       event.preventDefault(); showDialog('Contato em configuração', '<p>O WhatsApp ainda não foi configurado. Este modelo não envia mensagens nem confirma agendamentos. Preencha o número real em <strong>config.js</strong> antes da publicação.</p>');
     });
   });
-  $('#contact-status').textContent = whatsapp ? 'O WhatsApp abrirá em uma nova aba. O agendamento depende de confirmação.' : '[WHATSAPP A CONFIGURAR — nenhum agendamento é enviado neste modelo]';
+  const contactStatus = $('#contact-status');
+  if (contactStatus) contactStatus.textContent = whatsapp ? 'O WhatsApp abrirá em uma nova aba. O agendamento depende de confirmação.' : '[WHATSAPP A CONFIGURAR — nenhum agendamento é enviado neste modelo]';
   const email = filled(config.email) && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email) ? config.email : null;
   const phone = nationalPhone(config.phone);
   const maps = httpsUrl(config.mapsUrl) || (filled(config.address) ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(config.address)}` : null);
@@ -263,7 +268,8 @@
 
   // SEO publication is finalized at build time to support crawlers without JavaScript.
   if (config.published === true && filled(config.name) && filled(config.crm) && filled(config.uf) && filled(config.city) && whatsapp && privacyReady) {
-    $('#preview-note').hidden = true;
+    const previewNote = $('#preview-note');
+    if (previewNote) previewNote.hidden = true;
     $('meta[name="robots"]').content = 'index, follow';
   }
 
