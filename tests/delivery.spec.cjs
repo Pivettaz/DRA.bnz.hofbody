@@ -11,7 +11,7 @@ test('HTML entregue abre diretamente e mantém interações sem servidor', async
   await expect(page.locator('.hero [data-whatsapp]')).toHaveAttribute('href', /wa\.me\/5519999052156/);
   await expect(page.locator('#sobre img[data-image="portrait"]')).toHaveJSProperty('naturalWidth', 2730);
   await expect(page.locator('#contact-form')).toBeVisible();
-  await expect(page.locator('#form-unavailable')).toBeVisible();
+  await expect(page.locator('#form-unavailable')).toHaveCount(0);
   await page.locator('#name').fill('Pessoa de teste');
   await page.locator('#phone').fill('11987654321');
   await page.locator('#service').selectOption('Microagulhamento');

@@ -192,8 +192,6 @@
   const form = $('#contact-form');
   const formStatus = $('#form-status');
   const sendLink = $('#whatsapp-send');
-  const privacyReady = privacy.reviewed === true && ['controller', 'contact', 'retention', 'hostingProvider'].every(key => filled(privacy[key]));
-  $('#form-unavailable').hidden = privacyReady;
   const maskPhone = value => {
     let number = digits(value);
     if ((number.length === 12 || number.length === 13) && number.startsWith('55')) number = number.slice(2);

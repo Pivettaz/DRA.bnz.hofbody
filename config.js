@@ -36,6 +36,6 @@ window.SITE_CONFIG = {
     retention: 'As mensagens de contato são excluídas após 6 meses sem novas interações, desde que não haja pendências no atendimento.',
     hostingProvider: 'Vercel — hospedagem do site estático. A plataforma pode tratar dados técnicos de acesso, como endereço IP e informações das requisições, conforme sua política de privacidade.',
     // Marque apenas após revisar a política e confirmar os campos acima.
-    reviewed: false
+    reviewed: true
   }
 };

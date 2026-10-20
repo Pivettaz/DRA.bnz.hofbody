@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('política exibe informações confirmadas sem marcar revisão como concluída', async ({ page }) => {
+test('política exibe informações confirmadas e revisão concluída', async ({ page }) => {
   await page.goto('/');
   await page.locator('footer [data-dialog="privacy"]').click();
   await expect(page.locator('#dialog-content')).toContainText('Bruna Nobre Zenícola');
@@ -8,7 +8,7 @@ test('política exibe informações confirmadas sem marcar revisão como conclu�
   await expect(page.locator('#dialog-content')).toContainText('6 meses sem novas interações');
   await expect(page.locator('#dialog-content')).toContainText('Vercel');
   await expect(page.locator('#dialog-content .draft-note')).toHaveCount(0);
-  expect(await page.evaluate(() => window.SITE_CONFIG.privacy.reviewed)).toBe(false);
+  expect(await page.evaluate(() => window.SITE_CONFIG.privacy.reviewed)).toBe(true);
 });
 
 test('contatos ausentes informam pendência e política abre sem transmitir dados', async ({ page }) => {

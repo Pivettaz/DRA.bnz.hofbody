@@ -23,7 +23,7 @@ Edite **`config.js`**. Não edite a cópia gerada em `dist/`: ela será substitu
 3. Os três diferenciais informados estão em `confirmedDifferentials`.
 4. A marca oficial está configurada nos campos de logo; o retrato fornecido está em `portrait` e aparece na seção Sobre.
 5. Endereço e horários estão preenchidos. Confirme o CEP e a localização exata. Estacionamento e acessibilidade só são exibidos se fornecidos. `mapsUrl` recebe o link de compartilhamento; `mapsEmbedUrl` recebe somente o `src` HTTPS do iframe gerado em “Incorporar um mapa”. Se não houver URL de incorporação, o mapa é construído com o endereço informado.
-6. Os campos de `privacy` foram preenchidos com as informações fornecidas sobre responsável, contato, prazo de retenção e hospedagem. Revise o texto das políticas e marque `reviewed: true` apenas após aprovação. Confirme que os seis meses contam da última interação e que não há outras integrações de hospedagem ativas.
+6. Os campos de `privacy` foram preenchidos com as informações fornecidas sobre responsável, contato, prazo de retenção e hospedagem. A política foi confirmada como concluída e está marcada com `reviewed: true`. Revise-a novamente se as práticas de atendimento ou hospedagem mudarem.
 7. Preencha `siteUrl` com o domínio HTTPS real e `ogImage` com a imagem autorizada de compartilhamento (opcional, usa o retrato como alternativa).
 8. Após revisão profissional, cadastral e de privacidade, marque `published: true` e gere a versão final.
 

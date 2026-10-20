@@ -8,12 +8,12 @@ async function completeForm(page) {
   await page.locator('#consent').check();
 }
 
-test('formulário disponível valida, prepara WhatsApp e avisa sobre política em revisão', async ({ page }) => {
+test('formulário disponível valida e prepara WhatsApp sem aviso de revisão', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.route('https://wa.me/**', route => route.abort());
   await page.goto('/');
   await expect(page.locator('#contact-form')).toBeVisible();
-  await expect(page.locator('#form-unavailable')).toBeVisible();
+  await expect(page.locator('#form-unavailable')).toHaveCount(0);
   await expect(page.locator('.form-card h3')).toHaveText('Conte como podemos entrar em contato');
   await expect(page.locator('#form-fields')).not.toHaveAttribute('disabled', '');
   await expect(page.locator('#contato [data-whatsapp]').first()).toHaveAttribute('href', /wa\.me\/5519999052156/);
@@ -39,7 +39,7 @@ test('formulário configurado prepara link sem enviar e invalida ao editar ou re
   await page.route('**/config.js', route => route.fulfill({ contentType: 'application/javascript', body: `window.SITE_CONFIG = { name: 'EXEMPLO DE TESTE', whatsapp: '11987654321', privacy: { reviewed: true, controller: 'TESTE', contact: 'teste@example.invalid', retention: 'TESTE', hostingProvider: 'TESTE' } };` }));
   await page.route('https://wa.me/**', route => route.abort());
   await page.goto('/');
-  await expect(page.locator('#form-unavailable')).toBeHidden();
+  await expect(page.locator('#form-unavailable')).toHaveCount(0);
   await completeForm(page);
   await page.locator('.submit-button').click();
   await expect(page.locator('#form-status')).toContainText('Mensagem preparada');
