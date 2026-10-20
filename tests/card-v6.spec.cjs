@@ -1,5 +1,4 @@
 const {test,expect}=require('@playwright/test');
-const fs=require('node:fs');
 for(const width of [390,1440]){
  test(`faixa reduzida e arte centralizada em ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:900});
@@ -21,7 +20,5 @@ for(const width of [390,1440]){
   await expect(band).toHaveCSS('padding-top','12px');
   await expect(band).toHaveCSS('padding-bottom','14px');
   await expect(band).toHaveText('O cuidado começa com presença.');
-  fs.mkdirSync('qa/v6',{recursive:true});
-  await page.locator('.hero-brand-panel').screenshot({path:`qa/v6/${width===390?'celular':'desktop'}-card.png`});
  });
 }

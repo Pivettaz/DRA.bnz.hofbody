@@ -9,32 +9,37 @@
   const filled = value => typeof value === 'string' && value.trim() !== '' && !/[\[\]]/.test(value);
   const text = (value, fallback) => filled(value) ? value.trim() : fallback;
   const doctor = `Dra. ${text(config.name, '[NOME COMPLETO]')}`;
-  const crm = filled(config.crm) && filled(config.uf) ? `CRM-${config.uf} ${config.crm}` : '[CRM E ESTADO]';
-  const values = { ...config, doctor, crm };
+  const registration = filled(config.crbm) && filled(config.crbmRegion) ? `CRBM-${config.crbmRegion} ${config.crbm}` : '';
+  const values = { ...config, doctor, registration };
   $$('[data-bind]').forEach(el => {
     const value = values[el.dataset.bind];
-    if (filled(value) || ['doctor', 'crm'].includes(el.dataset.bind)) el.textContent = value;
+    if (filled(value) || el.dataset.bind === 'doctor') el.textContent = value;
   });
   $$('[data-optional]').forEach(el => { el.hidden = !filled(config[el.dataset.optional]); });
-  const specialtyConfirmed = config.specialtyRegistered === true && filled(config.specialty) && filled(config.rqe);
-  $$('[data-specialty]').forEach(el => {
-    el.hidden = !specialtyConfirmed;
-    if (specialtyConfirmed) el.textContent = `${config.specialty} · RQE ${config.rqe}`;
+  $$('[data-registration]').forEach(el => {
+    el.hidden = !registration;
+    if (registration) el.textContent = registration;
   });
-  const specialtyNote = $('#specialty-note');
-  if (specialtyNote) specialtyNote.hidden = specialtyConfirmed || config.published === true;
   if (Array.isArray(config.confirmedDifferentials) && config.confirmedDifferentials.some(filled)) {
-    $('#differentials').replaceChildren(...config.confirmedDifferentials.filter(filled).map(value => {
-      const li = document.createElement('li'); li.textContent = value; return li;
+    $('#differentials').replaceChildren(...config.confirmedDifferentials.filter(filled).map((value, index) => {
+      const li = document.createElement('li');
+      const number = document.createElement('span'); number.setAttribute('aria-hidden', 'true'); number.textContent = String(index + 1).padStart(2, '0');
+      const copy = document.createElement('span'); copy.className = 'differential-copy';
+      const [heading, ...description] = value.split(' — ');
+      const strong = document.createElement('strong'); strong.textContent = heading;
+      copy.append(strong);
+      if (description.length) { const detail = document.createElement('span'); detail.textContent = description.join(' — '); copy.append(detail); }
+      li.append(number, copy); return li;
     }));
-    $('[data-differential-note]').hidden = true;
+    const note = $('[data-differential-note]');
+    if (note) note.hidden = true;
   }
   const assetUrl = value => {
     if (!filled(value)) return null;
     if (/^data:image\/(?:png|webp|jpeg|avif);base64,[a-z0-9+/=]+$/i.test(value)) return value;
     try { const url = new URL(value, location.href); return ['http:', 'https:', 'file:'].includes(url.protocol) ? url.href : null; } catch { return null; }
   };
-  // Aplicações específicas dos arquivos enviados, sem substituição por fotografia.
+  // Aplica as imagens configuradas aos espaços correspondentes.
   $$('[data-image]').forEach(image => {
     const source = assetUrl(config[image.dataset.image]);
     if (source) image.src = source;
@@ -73,8 +78,8 @@
   const brandNote = $('#brand-note');
   if (brandNote) brandNote.hidden = filled(config.brand) || filled(config.logo);
   $('#copyright-year').textContent = new Date().getFullYear();
-  const title = `${filled(config.name) ? `Dra. ${config.name} | ` : ''}Escleroterapia e Microagulhamento em ${text(config.city, '[CIDADE]')}`;
-  const description = `Conheça o atendimento${filled(config.name) ? ` da Dra. ${config.name}` : ''} em ${text(config.city, '[CIDADE]')}. Informações sobre secagem de vasinhos, microagulhamento, localização e agendamento.`;
+  const title = `${filled(config.name) ? `${config.name} | Biomédica Esteta em ` : 'Escleroterapia e Microagulhamento em '}${text(config.city, '[CIDADE]')}`;
+  const description = `Conheça o atendimento${filled(config.name) ? ` de ${config.name}, Biomédica Esteta,` : ''} em ${text(config.city, '[CIDADE]')}. Informações sobre secagem de vasinhos, microagulhamento, localização e agendamento.`;
   document.title = title;
   $('meta[name="description"]').content = description;
   $('meta[property="og:title"]').content = title;
@@ -142,7 +147,6 @@
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
   const privacyContent = () => `
-    <p class="draft-note">${privacy.reviewed ? 'Informações sobre o tratamento dos dados de contato.' : 'MODELO A REVISAR ANTES DA PUBLICAÇÃO. Preencha os campos e confirme as práticas reais de atendimento.'}</p>
     <h3>Responsável e contato</h3><p>${escapeHTML(text(privacy.controller, '[RESPONSÁVEL PELO TRATAMENTO DOS DADOS]'))}<br>${escapeHTML(text(privacy.contact, '[CONTATO DE PRIVACIDADE]'))}</p>
     <h3>Quais dados são utilizados?</h3><p>Nome, telefone, serviço de interesse, período preferido e mensagem opcional são usados apenas para responder à solicitação e organizar o contato. Não envie diagnósticos, fotos, documentos ou informações sensíveis de saúde.</p>
     <h3>Como funciona o formulário?</h3><p>Este site não armazena os campos preenchidos em banco de dados, cookies ou armazenamento local. A mensagem é preparada apenas na memória desta página. Ao selecionar “Continuar no WhatsApp”, os dados serão incluídos em um link enviado ao serviço do WhatsApp. Você ainda precisa confirmar o envio no aplicativo. A confirmação de agendamento depende de resposta do atendimento.</p>
@@ -189,6 +193,7 @@
   const formStatus = $('#form-status');
   const sendLink = $('#whatsapp-send');
   const privacyReady = privacy.reviewed === true && ['controller', 'contact', 'retention', 'hostingProvider'].every(key => filled(privacy[key]));
+  $('#form-unavailable').hidden = privacyReady;
   const maskPhone = value => {
     let number = digits(value);
     if ((number.length === 12 || number.length === 13) && number.startsWith('55')) number = number.slice(2);
@@ -230,8 +235,8 @@
       formStatus.textContent = 'Revise os campos indicados. Nenhum dado foi enviado.';
       formStatus.classList.add('error'); firstInvalid.focus(); return;
     }
-    if (!whatsapp || !privacyReady) {
-      formStatus.textContent = 'Nenhum dado foi enviado. O formulário está em modo de personalização: configure o WhatsApp e revise a Política de Privacidade antes de habilitar o contato.';
+    if (!whatsapp) {
+      formStatus.textContent = 'Nenhum dado foi enviado. Configure o número de WhatsApp para preparar a mensagem.';
       formStatus.classList.add('error'); formStatus.focus(); return;
     }
     const message = [defaultMessage, '', `Nome: ${$('#name').value.trim()}`, `Telefone: ${$('#phone').value}`, `Serviço de interesse: ${$('#service').value}`, `Melhor período: ${$('#period').value}`, $('#message').value.trim() ? `Mensagem: ${$('#message').value.trim()}` : '', '', 'Autorizo o uso dos dados acima para responder à minha solicitação de contato.'].filter((line, index) => line || index === 1).join('\n');
@@ -265,16 +270,6 @@
     $('#map-container').append(frame, remove); remove.focus({ preventScroll: true });
     remove.addEventListener('click', () => { frame.remove(); remove.remove(); placeholder.hidden = false; $('#load-map').focus({ preventScroll: true }); });
   });
-
-  // SEO publication is finalized at build time to support crawlers without JavaScript.
-  if (config.published === true && filled(config.name) && filled(config.crm) && filled(config.uf) && filled(config.city) && whatsapp && privacyReady) {
-    const previewNote = $('#preview-note');
-    if (previewNote) previewNote.hidden = true;
-    $('meta[name="robots"]').content = 'index, follow';
-  }
-
-
-
 
 })();
 

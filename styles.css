@@ -132,6 +132,8 @@ img{display:block;max-width:100%}
 .principles{list-style:none;padding:0;margin:20px 0 0}
 .principles li{display:flex;align-items:center;gap:14px;border-top:1px solid var(--border);padding:12px 0;font-size:12px;flex-wrap:wrap}
 .principles li>span{font-size:9px;color:var(--accent-text);letter-spacing:1px}
+.principles li>.differential-copy{display:flex;flex-direction:column;gap:4px;flex:1;font-size:12px;letter-spacing:normal;color:var(--muted);line-height:1.6}
+.differential-copy strong{color:var(--primary);font-weight:600}
 .principles small{font-size:8px;color:var(--accent-text);margin-left:auto}
 .treatments{background:var(--surface-soft);border-block:1px solid var(--border)}
 .section-heading{display:flex;justify-content:space-between;align-items:end;gap:60px;margin-bottom:43px}
@@ -170,6 +172,7 @@ img{display:block;max-width:100%}
 .journey-steps p{font-size:11px;color:var(--on-primary-muted);margin:14px 0 0;line-height:1.9}
 .about{display:grid;grid-template-columns:.9fr 1fr;gap:94px;align-items:center}
 .portrait-about{min-height:490px;border-radius:12px 12px 150px 12px;background:var(--surface-warm);border-color:var(--border)}
+.portrait-about>img{object-position:center 30%}
 .portrait-about .portrait-placeholder:before{border-radius:6px 6px 140px 6px;border-color:var(--border-strong)}
 .portrait-about .portrait-mark{margin:32px 0 20px;color:var(--border-strong)}
 .portrait-about .placeholder-field{background:var(--surface-soft);border-color:var(--border-strong)}
@@ -223,7 +226,7 @@ dd{font-size:12px;color:var(--muted);margin:5px 0 0;overflow-wrap:anywhere}
 .contact-copy .contact-details a{display:inline-block;min-height:32px}
 .social-links{display:flex;gap:24px;border-top:1px solid var(--border-on-primary);padding-top:17px;margin-top:26px}
 .social-links a{font-size:12px;min-height:44px}
-.social-links small{display:block;font-size:10px;color:var(--on-primary-muted)}
+.social-links .instagram-icon{display:block;width:27px;height:27px;color:var(--accent);stroke-width:1.8}
 .form-card{background:var(--paper);color:var(--ink);padding:38px;border-radius:14px;border:1px solid var(--border);box-shadow:0 12px 40px var(--shadow-medium)}
 .form-card>.eyebrow{font-size:9px;letter-spacing:1.6px;margin-bottom:16px}
 .form-card h3{font-size:29px;line-height:1.15;max-width:350px}
@@ -555,7 +558,7 @@ footer{padding-bottom:0}
 }
 .button.whatsapp {
   background: #25D366;
-  color: #fff;
+  color: var(--primary);
 }
 
 .button.whatsapp:hover {

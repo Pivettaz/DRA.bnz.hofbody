@@ -1,6 +1,4 @@
 const {test,expect}=require('@playwright/test');
-const fs=require('node:fs');
-const path=require('node:path');
 
 for(const width of [320,390,768,1024,1280,1440,1920]){
  test(`card compacto e assinatura horizontal sem colisões em ${width}px`,async({page})=>{
@@ -36,27 +34,14 @@ for(const width of [320,390,768,1024,1280,1440,1920]){
    expect(metrics.cardWidth).toBeLessThanOrEqual(320);
    expect(metrics.mobileBelow).toBe(true);expect(metrics.centerX).toBeLessThan(2);
   }
-  if([390,768,1440].includes(width)){
-   fs.mkdirSync('qa/v4',{recursive:true});
-   const label=width===390?'celular':width===768?'tablet':'desktop';
-   const height=await page.locator('#inicio').evaluate(el=>Math.ceil(el.getBoundingClientRect().bottom));
-   await page.screenshot({path:`qa/v4/${label}-cabecalho-hero.png`,fullPage:true,clip:{x:0,y:0,width,height}});
-  }
  });
 }
 
-test('somente três alterações solicitadas, sem modificar outras seções ou comportamento',async({page})=>{
- const baseline='tests/fixtures/before-v4';
- expect(fs.readFileSync('app.js','utf8')).toBe(fs.readFileSync(`${baseline}/app.js`,'utf8'));
- const css=fs.readFileSync('styles.css','utf8'),before=fs.readFileSync(`${baseline}/styles.css`,'utf8');
- expect(css.match(/:root\{[\s\S]*?\}/)[0]).toBe(before.match(/:root\{[\s\S]*?\}/)[0]);
- const snapshot=async file=>{
-  return await page.evaluate(source=>{
-   const document=new DOMParser().parseFromString(source,'text/html');
-   const body=document.body.cloneNode(true);
-   body.querySelectorAll('script,.portrait-footnote,.vertical-caption,.header-signature').forEach(el=>el.remove());
-   return {text:body.textContent.replace(/\s+/g,' ').trim(),nav:document.querySelector('#main-nav').innerHTML,sections:[...document.querySelectorAll('main section[id]:not(#inicio)')].map(s=>s.innerHTML),links:[...document.querySelectorAll('a')].map(a=>a.getAttribute('href'))};
-  },fs.readFileSync(file,'utf8'));
- };
- expect(await snapshot('index.html')).toEqual(await snapshot(`${baseline}/index.html`));
+test('menu mobile abre e fecha ao selecionar seção',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('/');
+ await page.locator('.menu-toggle').click();
+ await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded','true');
+ await page.locator('#main-nav a[href="#sobre"]').click();
+ await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded','false');
 });

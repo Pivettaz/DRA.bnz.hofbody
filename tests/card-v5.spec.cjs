@@ -1,6 +1,4 @@
 const {test,expect}=require('@playwright/test');
-const fs=require('node:fs');
-const path=require('node:path');
 
 for(const width of [390,768,1440]){
  test(`acabamento champanhe exclusivo do card em ${width}px`,async({page})=>{
@@ -25,21 +23,11 @@ for(const width of [390,768,1440]){
   const gap=await page.evaluate(()=>document.querySelector('.hero-brand-tagline').getBoundingClientRect().top-document.querySelector('.hero-brand-image').getBoundingClientRect().bottom);
   expect(Math.abs(gap)).toBeLessThan(1);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
-  fs.mkdirSync('qa/v5',{recursive:true});
-  const label=width===390?'celular':width===768?'tablet':'desktop';
-  await card.screenshot({path:`qa/v5/${label}-card.png`});
-  await page.evaluate(()=>window.scrollTo(0,0));
-  const height=await page.locator('#inicio').evaluate(e=>Math.ceil(e.getBoundingClientRect().bottom));
-  await page.screenshot({path:`qa/v5/${label}-hero.png`,fullPage:true,clip:{x:0,y:0,width,height}});
  });
 }
 
-test('nenhuma mudança no HTML, imagens, configuração, interações ou estilos anteriores',async()=>{
- const baseline='tests/fixtures/before-v5';
- for(const file of ['index.html','app.js','config.js']) expect(fs.readFileSync(file,'utf8')).toBe(fs.readFileSync(`${baseline}/${file}`,'utf8'));
- const before=fs.readFileSync(`${baseline}/styles.css`,'utf8'),after=fs.readFileSync('styles.css','utf8');
- expect(after.startsWith(before)).toBe(true);
- const added=after.slice(before.length).replace(/\/\*[\s\S]*?\*\//g,'');
- const selectors=[...added.matchAll(/([^{}]+)\{/g)].map(m=>m[1].trim());
- expect(selectors).toEqual([':root','.hero-brand-panel','.hero-brand-panel .hero-brand-tagline','.hero-brand-panel .hero-brand-tagline em']);
+test('card mantém arte e assinatura atual',async({page})=>{
+ await page.goto('/');
+ await expect(page.locator('.hero-brand-image')).toHaveAttribute('alt','BNZ — HOF | BODY');
+ await expect(page.locator('.hero-brand-tagline')).toHaveText('O cuidado começa com presença.');
 });

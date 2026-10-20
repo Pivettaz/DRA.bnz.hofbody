@@ -14,6 +14,9 @@ test('build gera HTML portátil e SEO estático sem publicar identidade incomple
   expect(html).not.toContain('src="app.js"');
   expect(html).not.toContain('href="styles.css"');
   expect(html).not.toContain('application/ld+json');
+  expect(fs.existsSync(path.join(out, 'assets/identidade/bruna-nobre-zenicola.jpeg'))).toBe(true);
+  expect(fs.existsSync(path.join(out, 'assets/identidade/logo-azul.pdf'))).toBe(false);
+  expect(fs.existsSync(path.join(out, 'assets/identidade/bnz-hof-body.webp'))).toBe(false);
   expect(fs.readFileSync(path.join(out, 'robots.txt'), 'utf8')).toContain('Disallow: /');
 });
 

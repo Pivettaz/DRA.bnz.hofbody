@@ -1,6 +1,18 @@
 const { test, expect } = require('@playwright/test');
 
+test('política exibe informações confirmadas sem marcar revisão como concluída', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('footer [data-dialog="privacy"]').click();
+  await expect(page.locator('#dialog-content')).toContainText('Bruna Nobre Zenícola');
+  await expect(page.locator('#dialog-content')).toContainText('bnz.drabruna@gmail.com');
+  await expect(page.locator('#dialog-content')).toContainText('6 meses sem novas interações');
+  await expect(page.locator('#dialog-content')).toContainText('Vercel');
+  await expect(page.locator('#dialog-content .draft-note')).toHaveCount(0);
+  expect(await page.evaluate(() => window.SITE_CONFIG.privacy.reviewed)).toBe(false);
+});
+
 test('contatos ausentes informam pendência e política abre sem transmitir dados', async ({ page }) => {
+  await page.route('**/config.js', route => route.fulfill({ contentType: 'application/javascript', body: 'window.SITE_CONFIG = { privacy: {} };' }));
   await page.goto('/');
   await page.locator('.hero [data-whatsapp]').click();
   await expect(page.locator('#info-dialog')).toBeVisible();

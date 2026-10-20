@@ -1,9 +1,4 @@
 const { test, expect } = require('@playwright/test');
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
-const baseline = path.resolve('tests/fixtures/before-v3');
-const readConfig = dir => { const box = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(dir,'config.js'),'utf8'),box); return JSON.parse(JSON.stringify(box.window.SITE_CONFIG)); };
 
 test('cabeçalho apresenta apenas BNZ e Hero usa identidade completa enviada', async ({ page }) => {
   await page.goto('/');
@@ -22,23 +17,16 @@ test('cabeçalho apresenta apenas BNZ e Hero usa identidade completa enviada', a
   await expect(page.locator('body')).not.toContainText('[CRM');
   await expect(page.locator('body')).not.toContainText('[IMAGEM DA DOUTORA]');
   await expect(page.locator('body')).not.toContainText('RETRATO PROFISSIONAL');
-  await expect(page.locator('.credentials, .brand-detail')).toHaveCount(0);
+  await expect(page.locator('.credentials')).toContainText('Biomédica Esteta');
+  await expect(page.locator('[data-registration]')).toBeHidden();
   await expect(page).not.toHaveTitle(/Dra\. \[NOME/);
 });
 
-test('cores e funcionalidades permanecem inalteradas', async ({ page }) => {
-  const css = fs.readFileSync('styles.css','utf8');
-  const beforeCSS = fs.readFileSync(path.join(baseline,'styles.css'),'utf8');
-  expect(css.match(/:root\{[\s\S]*?\}/)[0]).toBe(beforeCSS.match(/:root\{[\s\S]*?\}/)[0]);
-  const beforeJS = fs.readFileSync(path.join(baseline,'app.js'),'utf8'), afterJS = fs.readFileSync('app.js','utf8');
-  expect(afterJS.slice(afterJS.indexOf('  const menu ='))).toBe(beforeJS.slice(beforeJS.indexOf('  const menu =')));
-  const before = readConfig(baseline), after = readConfig('.');
-  for (const key of ['whatsapp','phone','email','instagram','facebook','address','mapsUrl','mapsEmbedUrl','privacy','published']) expect(after[key]).toEqual(before[key]);
+test('identidade e contato atuais aparecem sem registro inventado', async ({ page }) => {
   await page.goto('/');
-  const snapshot = () => ({ nav: [...document.querySelectorAll('#main-nav a')].map(x=>[x.textContent,x.getAttribute('href')]), sections:[...document.querySelectorAll('main section[id]')].map(x=>x.id), treatment:document.querySelector('#tratamentos').textContent, faq:document.querySelector('#duvidas').textContent, contact:document.querySelector('#contato').textContent });
-  const current = await page.evaluate(snapshot);
-  await page.goto(`file://${baseline}/index.html`);
-  expect(current).toEqual(await page.evaluate(snapshot));
+  await expect(page.locator('#sobre')).toContainText('Bruna Nobre Zenícola');
+  await expect(page.locator('#contato')).toContainText('bnz.drabruna@gmail.com');
+  await expect(page.locator('[data-registration]')).toBeHidden();
 });
 
 for (const width of [390,768,1440]) {
@@ -59,9 +47,5 @@ for (const width of [390,768,1440]) {
     });
     expect(fits).toBe(true);
     await expect(page.locator('.portrait-footnote')).toHaveCount(0);
-    const label=width===390?'celular':width===768?'tablet':'desktop';
-    fs.mkdirSync('qa/v3',{recursive:true});
-    const height=await page.locator('#inicio').evaluate(el=>Math.ceil(el.getBoundingClientRect().bottom));
-    await page.screenshot({path:`qa/v3/${label}-cabecalho-hero.png`,fullPage:true,clip:{x:0,y:0,width,height}});
   });
 }

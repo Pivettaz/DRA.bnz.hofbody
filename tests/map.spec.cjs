@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('mapa sem endereço informa pendência; configurado só incorpora após consentimento', async ({ page }) => {
+  await page.route('**/config.js', route => route.fulfill({ contentType: 'application/javascript', body: 'window.SITE_CONFIG = { privacy: {} };' }));
   await page.goto('/');
   await page.locator('#load-map').click();
   await expect(page.locator('#info-dialog')).toBeVisible();

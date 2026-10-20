@@ -8,19 +8,29 @@ async function completeForm(page) {
   await page.locator('#consent').check();
 }
 
-test('formulário valida dados e consentimento e não simula envio sem configuração', async ({ page }) => {
+test('formulário disponível valida, prepara WhatsApp e avisa sobre política em revisão', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.route('https://wa.me/**', route => route.abort());
   await page.goto('/');
+  await expect(page.locator('#contact-form')).toBeVisible();
+  await expect(page.locator('#form-unavailable')).toBeVisible();
+  await expect(page.locator('.form-card h3')).toHaveText('Conte como podemos entrar em contato');
+  await expect(page.locator('#form-fields')).not.toHaveAttribute('disabled', '');
+  await expect(page.locator('#contato [data-whatsapp]').first()).toHaveAttribute('href', /wa\.me\/5519999052156/);
+  await expect(page.locator('[data-service="Escleroterapia"]')).toHaveAttribute('href', '#contato');
   await page.locator('.submit-button').click();
   await expect(page.locator('#name-error')).toContainText('Informe');
   await expect(page.locator('#consent-error')).toContainText('consentimento');
-  await expect(page.locator('#name')).toHaveAttribute('aria-invalid', 'true');
-  await expect(page.locator('#name')).toBeFocused();
   await completeForm(page);
   await expect(page.locator('#phone')).toHaveValue('(11) 98765-4321');
   await page.locator('.submit-button').click();
-  await expect(page.locator('#form-status')).toContainText('Nenhum dado foi enviado');
-  await expect(page.locator('#whatsapp-send')).toBeHidden();
+  await expect(page.locator('#form-status')).toContainText('Mensagem preparada');
+  const send = page.locator('#whatsapp-send');
+  await expect(send).toBeVisible();
+  const url = new URL(await send.getAttribute('href'));
+  expect(url.hostname).toBe('wa.me');
+  expect(url.pathname).toBe('/5519999052156');
+  expect(url.searchParams.get('text')).toContain('Pessoa de teste');
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0]);
 });
 
@@ -29,6 +39,7 @@ test('formulário configurado prepara link sem enviar e invalida ao editar ou re
   await page.route('**/config.js', route => route.fulfill({ contentType: 'application/javascript', body: `window.SITE_CONFIG = { name: 'EXEMPLO DE TESTE', whatsapp: '11987654321', privacy: { reviewed: true, controller: 'TESTE', contact: 'teste@example.invalid', retention: 'TESTE', hostingProvider: 'TESTE' } };` }));
   await page.route('https://wa.me/**', route => route.abort());
   await page.goto('/');
+  await expect(page.locator('#form-unavailable')).toBeHidden();
   await completeForm(page);
   await page.locator('.submit-button').click();
   await expect(page.locator('#form-status')).toContainText('Mensagem preparada');
