@@ -157,6 +157,8 @@ img{display:block;max-width:100%}
 .medical-note{display:flex;gap:10px;padding:15px;border-radius:7px;background:var(--surface-soft);font-size:10px;line-height:1.8;color:var(--muted);margin:0 0 22px}
 .medical-note .icon{width:15px;height:15px;margin-top:2px}
 .treatment-bottom>.button{width:100%;font-size:12px}
+.results-trigger{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin:0 0 14px;padding:0;border:0;border-bottom:1px solid var(--border-strong);background:none;color:var(--primary);font-size:12px;font-weight:600}
+.results-trigger span{font-size:17px;font-weight:400}
 .skin-card{background:var(--surface-warm);border-color:var(--border)}
 .skin-card .medical-note{background:var(--surface-warm);color:var(--muted)}
 .journey{background:var(--primary);color:var(--on-primary-muted)}
@@ -173,6 +175,11 @@ img{display:block;max-width:100%}
 .about{display:grid;grid-template-columns:.9fr 1fr;gap:94px;align-items:center}
 .portrait-about{min-height:490px;border-radius:12px 12px 150px 12px;background:var(--surface-warm);border-color:var(--border)}
 .portrait-about>img{object-position:center 30%}
+.about-carousel-controls,.results-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px;color:var(--primary);font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.about-carousel-controls button,.results-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--border-strong);border-radius:50%;background:transparent;color:var(--primary);flex:none}
+.about-carousel-controls span,.results-controls span{min-width:36px;text-align:center}
+.about-carousel-controls button:hover,.results-controls button:hover{background:var(--surface-soft)}
+.about-carousel-controls button svg,.results-controls button svg{width:17px;height:17px;stroke-width:1.8}
 .portrait-about .portrait-placeholder:before{border-radius:6px 6px 140px 6px;border-color:var(--border-strong)}
 .portrait-about .portrait-mark{margin:32px 0 20px;color:var(--border-strong)}
 .portrait-about .placeholder-field{background:var(--surface-soft);border-color:var(--border-strong)}
@@ -283,6 +290,11 @@ dialog h2{font-size:34px;margin:20px 0}
 #dialog-content p{overflow-wrap:anywhere}
 #dialog-content ul{font-size:12px}
 dialog>.button{margin-top:16px}
+#results-dialog{width:min(760px,calc(100% - 32px))}
+#results-dialog figure{margin:0}
+#results-dialog figure img{width:100%;max-height:58dvh;object-fit:contain;background:var(--surface-soft)}
+#results-dialog figcaption{margin-top:12px;color:var(--muted);font-size:11px;line-height:1.7}
+@media(max-width:760px){#results-dialog{padding:18px}#results-dialog h2{margin:12px 0}#results-dialog figure img{width:auto;max-width:100%;height:auto;max-height:42dvh;margin-inline:auto}}
 .svg-defs{position:absolute;width:0;height:0;overflow:hidden}
 .noscript-note{background:var(--surface-warm);padding:20px;font-size:14px}
 #conteudo:focus{outline:none}

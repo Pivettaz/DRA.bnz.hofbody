@@ -125,6 +125,81 @@
   updateActive();
   window.matchMedia('(min-width: 1021px)').addEventListener('change', () => setMenu(false));
   $$('[data-service]').forEach(link => link.addEventListener('click', () => { $('#service').value = link.dataset.service; }));
+  const aboutCarousel = $('.about-carousel');
+  const aboutSlides = $$('[data-about-slide]');
+  let aboutIndex = 0;
+  let aboutRequestedIndex = 0;
+  const showAboutSlide = async index => {
+    const nextIndex = (index + aboutSlides.length) % aboutSlides.length;
+    aboutRequestedIndex = nextIndex;
+    const image = aboutSlides[nextIndex].querySelector('img');
+    image.loading = 'eager';
+    try { await image.decode(); } catch { return; }
+    if (aboutRequestedIndex !== nextIndex) return;
+    aboutIndex = nextIndex;
+    aboutSlides.forEach((slide, position) => { slide.hidden = position !== aboutIndex; });
+    $('[data-about-count]').textContent = `${aboutIndex + 1} de ${aboutSlides.length}`;
+  };
+  $('.about-carousel-controls').hidden = false;
+  $('[data-about-previous]').addEventListener('click', () => showAboutSlide(aboutRequestedIndex - 1));
+  $('[data-about-next]').addEventListener('click', () => showAboutSlide(aboutRequestedIndex + 1));
+  aboutCarousel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault(); showAboutSlide(aboutRequestedIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+
+  const resultsDialog = $('#results-dialog');
+  let activeResults = null;
+  let resultIndex = 0;
+  let resultRequestedIndex = 0;
+  let resultsTrigger = null;
+  let resultsOpening = false;
+  const showResultSlide = async index => {
+    const group = activeResults;
+    const slides = [...activeResults.querySelectorAll('[data-result-slide]')];
+    const nextIndex = (index + slides.length) % slides.length;
+    resultRequestedIndex = nextIndex;
+    const image = slides[nextIndex].querySelector('img');
+    image.loading = 'eager';
+    try { await image.decode(); } catch { return; }
+    if (activeResults !== group || resultRequestedIndex !== nextIndex) return;
+    resultIndex = nextIndex;
+    slides.forEach((slide, position) => { slide.hidden = position !== resultIndex; });
+    $('[data-results-count]').textContent = `${resultIndex + 1} de ${slides.length}`;
+  };
+  $$('[data-open-results]').forEach(button => button.addEventListener('click', async () => {
+    if (resultsOpening) return;
+    resultsOpening = true;
+    const group = $(`[data-results="${button.dataset.openResults}"]`);
+    const firstImage = group.querySelector('[data-result-slide] img');
+    firstImage.loading = 'eager';
+    try { await firstImage.decode(); } catch { /* O texto alternativo permanece disponível se a imagem falhar. */ }
+    resultsOpening = false;
+    resultsTrigger = button;
+    activeResults = group;
+    $$('[data-results]').forEach(group => { group.hidden = group !== activeResults; });
+    $('#results-title').textContent = button.dataset.openResults === 'vasinhos' ? 'Secagem de vasinhos' : 'Microagulhamento';
+    const slides = [...activeResults.querySelectorAll('[data-result-slide]')];
+    slides.forEach((slide, position) => { slide.hidden = position !== 0; });
+    resultIndex = 0;
+    resultRequestedIndex = 0;
+    $('[data-results-count]').textContent = `1 de ${slides.length}`;
+    resultsDialog.showModal();
+  }));
+  $('[data-results-previous]').addEventListener('click', () => showResultSlide(resultRequestedIndex - 1));
+  $('[data-results-next]').addEventListener('click', () => showResultSlide(resultRequestedIndex + 1));
+  $('#results-close').addEventListener('click', () => resultsDialog.close());
+  resultsDialog.addEventListener('close', () => resultsTrigger?.focus());
+  resultsDialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault(); showResultSlide(resultRequestedIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  resultsDialog.addEventListener('click', event => {
+    const rect = resultsDialog.getBoundingClientRect();
+    if (event.target === resultsDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) resultsDialog.close();
+  });
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('reveal-in'); revealObserver.unobserve(entry.target); }
